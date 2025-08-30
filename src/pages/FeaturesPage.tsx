@@ -82,10 +82,10 @@ export default function FeaturesPage() {
         <div className="text-center">
           <div className="bg-white rounded-3xl p-12 border border-gray-200 shadow-xl max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
-              Ready to Transform Your Workflow?
+              Simplify Your Workflow, Achieve More
             </h2>
             <p className="text-xl text-gray-600 mb-8 font-light">
-              See how these powerful features can streamline your business operations and accelerate growth.
+              Experience features that save time, reduce errors, and help your business grow effortlessly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
