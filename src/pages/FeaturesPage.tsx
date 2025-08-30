@@ -91,9 +91,6 @@ export default function FeaturesPage() {
               <button className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Start Free Trial
               </button>
-              <button className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 border border-gray-300">
-                Schedule Demo
-              </button>
             </div>
           </div>
         </div>
