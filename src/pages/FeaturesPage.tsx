@@ -89,7 +89,7 @@ export default function FeaturesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Start Your 7-Day Free Trial Today
+                Start Your Free Trial Today
               </button>
             </div>
           </div>
