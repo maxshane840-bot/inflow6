@@ -30,13 +30,13 @@ export default function FeaturesPage() {
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: 'Advanced Reporting & Analytics',
-      description: 'Gain deep insights into your business performance with comprehensive dashboards, customizable reports, and detailed performance tracking to optimize your operations and drive growth.',
+      description: 'Gain deep insights into your business performance.',
       benefits: ['Comprehensive dashboards', 'Customizable reports', 'Performance tracking', 'Growth optimization']
     },
     {
       icon: <Bot className="w-8 h-8" />,
       title: 'AI-Powered Automation',
-      description: 'Streamline operations with intelligent automation featuring predictive lead scoring, automated customer segmentation, and smart workflow recommendations to maximize efficiency and results.',
+      description: 'Streamline operations with intelligent automation.',
       benefits: ['Predictive lead scoring', 'Automated customer segmentation', 'Smart workflow recommendations', 'Efficiency optimization']
     }
   ];
