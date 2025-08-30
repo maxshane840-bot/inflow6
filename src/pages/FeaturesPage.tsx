@@ -6,32 +6,38 @@ export default function FeaturesPage() {
     {
       icon: <Users className="w-8 h-8" />,
       title: 'Centralized Client Management Hub',
-      description: 'Keep all your client information, interactions, and history in one organized place.'
+      description: 'Keep all your client information, interactions, and history in one organized place.',
+      benefits: ['Client profiles', 'Interaction history', 'Contact management', 'Data organization']
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Automated Workflows & Follow-ups',
-      description: 'Set up smart automation to handle routine tasks and never miss important follow-ups.'
+      description: 'Set up smart automation to handle routine tasks and never miss important follow-ups.',
+      benefits: ['Email automation', 'Task scheduling', 'Follow-up reminders', 'Workflow templates']
     },
     {
       icon: <Calendar className="w-8 h-8" />,
       title: 'Built-in Booking & Scheduling',
-      description: 'Let clients book appointments directly with integrated calendar management.'
+      description: 'Let clients book appointments directly with integrated calendar management.',
+      benefits: ['Online booking', 'Calendar sync', 'Appointment reminders', 'Availability management']
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: 'Data Insights for Smarter Decisions',
-      description: 'Get actionable insights from your business data to make informed strategic decisions.'
+      description: 'Get actionable insights from your business data to make informed strategic decisions.',
+      benefits: ['Business analytics', 'Performance metrics', 'Data visualization', 'Strategic insights']
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: 'Advanced Reporting & Analytics',
-      description: 'Gain deep insights into your business performance with comprehensive dashboards, customizable reports, and detailed performance tracking to optimize your operations and drive growth.'
+      description: 'Gain deep insights into your business performance with comprehensive dashboards, customizable reports, and detailed performance tracking to optimize your operations and drive growth.',
+      benefits: ['Comprehensive dashboards', 'Customizable reports', 'Performance tracking', 'Growth optimization']
     },
     {
       icon: <Bot className="w-8 h-8" />,
       title: 'AI-Powered Automation',
-      description: 'Streamline operations with intelligent automation featuring predictive lead scoring, automated customer segmentation, and smart workflow recommendations to maximize efficiency and results.'
+      description: 'Streamline operations with intelligent automation featuring predictive lead scoring, automated customer segmentation, and smart workflow recommendations to maximize efficiency and results.',
+      benefits: ['Predictive lead scoring', 'Automated customer segmentation', 'Smart workflow recommendations', 'Efficiency optimization']
     }
   ];
 
@@ -60,6 +66,14 @@ export default function FeaturesPage() {
               </div>
               <h3 className="text-xl font-bold text-primary-600 mb-3">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <ul className="mt-4 space-y-2">
+                {feature.benefits.map((benefit, benefitIndex) => (
+                  <li key={benefitIndex} className="text-sm text-gray-500 flex items-center">
+                    <span className="w-1.5 h-1.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mr-2 flex-shrink-0"></span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
