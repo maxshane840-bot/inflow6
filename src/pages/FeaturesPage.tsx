@@ -1,54 +1,37 @@
 import React from 'react';
-import { Users, Zap, Calendar, BarChart3, Shield, Globe, MessageSquare, Workflow } from 'lucide-react';
+import { Users, Zap, Calendar, BarChart3, TrendingUp, Bot } from 'lucide-react';
 
 export default function FeaturesPage() {
-  const coreFeatures = [
+  const features = [
     {
       icon: <Users className="w-8 h-8" />,
       title: 'Centralized Client Management Hub',
-      description: 'Keep all your client information, interactions, and history in one organized place.',
-      benefits: ['Complete client profiles', 'Interaction history tracking', 'Document management', 'Contact organization']
+      description: 'Keep all your client information, interactions, and history in one organized place.'
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Automated Workflows & Follow-ups',
-      description: 'Set up smart automation to handle routine tasks and never miss important follow-ups.',
-      benefits: ['Email automation', 'Task scheduling', 'Follow-up reminders', 'Workflow templates']
+      description: 'Set up smart automation to handle routine tasks and never miss important follow-ups.'
     },
     {
       icon: <Calendar className="w-8 h-8" />,
       title: 'Built-in Booking & Scheduling',
-      description: 'Let clients book appointments directly with integrated calendar management.',
-      benefits: ['Online booking system', 'Calendar synchronization', 'Automated confirmations', 'Time zone support']
+      description: 'Let clients book appointments directly with integrated calendar management.'
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: 'Data Insights for Smarter Decisions',
-      description: 'Get actionable insights from your business data to make informed strategic decisions.',
-      benefits: ['Performance analytics', 'Custom reporting', 'Trend analysis', 'ROI tracking']
-    }
-  ];
-
-  const additionalFeatures = [
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: 'Communication Tools',
-      description: 'Integrated messaging and communication features to stay connected with clients.'
+      description: 'Get actionable insights from your business data to make informed strategic decisions.'
     },
     {
-      icon: <Workflow className="w-6 h-6" />,
-      title: 'Sales Pipelines',
-      description: 'Visual pipeline management to track deals and opportunities from lead to close.'
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: 'Advanced Reporting & Analytics',
+      description: 'Gain deep insights into your business performance with comprehensive dashboards, customizable reports, and detailed performance tracking to optimize your operations and drive growth.'
     },
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Enterprise Security',
-      description: 'Bank-level security with encryption, backups, and compliance standards.'
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'API Integration',
-      description: 'Connect with your existing tools and services through our comprehensive API.'
+      icon: <Bot className="w-8 h-8" />,
+      title: 'AI-Powered Automation',
+      description: 'Streamline operations with intelligent automation featuring predictive lead scoring, automated customer segmentation, and smart workflow recommendations to maximize efficiency and results.'
     }
   ];
 
@@ -65,72 +48,20 @@ export default function FeaturesPage() {
           </p>
         </div>
 
-        {/* Core Features */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-12 text-center text-gray-900">
-            Core Features
-          </h2>
-          
-          <div className="space-y-16">
-            {coreFeatures.map((feature, index) => (
-              <div 
-                key={index}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
-              >
-                <div className="flex-1">
-                  <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div className="text-primary-600 mb-6">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{feature.description}</p>
-                    
-                    <div className="space-y-3">
-                      {feature.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center">
-                          <span className="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-gray-600">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex-1">
-                  <div className="aspect-video bg-gray-100 rounded-3xl border border-gray-200 flex items-center justify-center shadow-lg">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                        {feature.icon}
-                      </div>
-                      <p className="text-gray-500">Feature Demo</p>
-                    </div>
-                  </div>
-                </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
+          {features.map((feature, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-gradient-to-br hover:from-white hover:to-primary-50/30 group"
+            >
+              <div className="text-primary-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Additional Features */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-12 text-center text-gray-900">
-            Additional Features
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {additionalFeatures.map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-primary-300 transition-all duration-300 shadow-lg hover:shadow-xl hover-lift"
-              >
-                <div className="text-primary-600 mb-4">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-primary-600 mb-3">{feature.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* CTA Section */}
