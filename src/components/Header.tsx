@@ -11,7 +11,16 @@ interface HeaderProps {
 export default function Header({ currentPage = 'home', onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { user, signOut } = useAuth();
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', key: 'home' },
@@ -38,7 +47,11 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm' 
+          : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
+      }`}>
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -46,8 +59,8 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => handleNavigation('home')}
             >
-              <div className="relative h-14 w-[160px] pl-4">
-                <div className="h-full w-full bg-gradient-to-r from-primary-500 to-secondary-500"
+              <div className="relative h-14 w-[160px] pl-6">
+                <div className="h-full w-full bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400"
                   style={{
                     WebkitMaskImage: "url('/dffdf.png')",
                     maskImage: "url('/dffdf.png')",
@@ -68,8 +81,8 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
                 <button
                   key={item.key}
                   onClick={() => handleNavigation(item.key)}
-                  className={`text-sm font-medium transition-colors duration-300 hover:text-primary-600 ${
-                    currentPage === item.key ? 'text-primary-600' : 'text-gray-700'
+                  className={`text-sm font-medium transition-colors duration-300 hover:text-pink-500 ${
+                    currentPage === item.key ? 'text-pink-500' : 'text-gray-700'
                   }`}
                 >
                   {item.name}
@@ -81,7 +94,7 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
             <div className="hidden md:block">
               <button
                 onClick={handleAuthAction}
-                className="group bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+                className="group bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
               >
                 <span>{user ? 'Sign Out' : 'Get Started'}</span>
                 {!user && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
@@ -91,7 +104,7 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-700 hover:text-primary-600 transition-colors duration-300"
+              className="md:hidden text-gray-700 hover:text-pink-500 transition-colors duration-300"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -105,8 +118,8 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
                   <button
                     key={item.key}
                     onClick={() => handleNavigation(item.key)}
-                    className={`text-left text-sm font-medium transition-colors duration-300 hover:text-primary-600 ${
-                      currentPage === item.key ? 'text-primary-600' : 'text-gray-700'
+                    className={`text-left text-sm font-medium transition-colors duration-300 hover:text-pink-500 ${
+                      currentPage === item.key ? 'text-pink-500' : 'text-gray-700'
                     }`}
                   >
                     {item.name}
@@ -114,7 +127,7 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
                 ))}
                 <button
                   onClick={handleAuthAction}
-                  className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 w-full mt-4"
+                  className="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 w-full mt-4"
                 >
                   {user ? 'Sign Out' : 'Get Started'}
                 </button>
