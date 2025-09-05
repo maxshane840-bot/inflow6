@@ -94,10 +94,10 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
             <div className="hidden md:block">
               <button
                 onClick={handleAuthAction}
-                className="group bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+                className="group bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25 flex items-center space-x-2"
               >
                 <span>{user ? 'Sign Out' : 'Get Started'}</span>
-                {!user && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                {!user && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 group-hover:text-cyan-200 transition-all" />}
               </button>
             </div>
 
@@ -127,7 +127,7 @@ export default function Header({ currentPage = 'home', onNavigate }: HeaderProps
                 ))}
                 <button
                   onClick={handleAuthAction}
-                  className="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 w-full mt-4"
+                  className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 w-full mt-4 shadow-lg"
                 >
                   {user ? 'Sign Out' : 'Get Started'}
                 </button>

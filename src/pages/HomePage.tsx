@@ -101,16 +101,16 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <button 
                   onClick={() => onNavigate?.('pricing')}
-                  className="group bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
+                  className="group bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
                 >
                   Get Started
                 </button>
                 
                 <button 
                   onClick={onScrollToVideo}
-                  className="flex items-center justify-center space-x-2 bg-white/90 backdrop-blur-sm hover:bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 border-transparent hover:border-pink-500/30 hover:shadow-xl group"
+                  className="flex items-center justify-center space-x-2 bg-white/90 backdrop-blur-sm hover:bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 border-gray-200 hover:border-pink-500/50 hover:shadow-lg group"
                 >
-                  <Play className="w-5 h-5 text-pink-500 group-hover:text-purple-600 transition-colors" />
+                  <Play className="w-5 h-5 text-pink-500 group-hover:text-cyan-400 transition-colors" />
                   <span>See Demo</span>
                 </button>
               </div>
@@ -120,7 +120,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                 {stats.map((stat, index) => (
                   <div key={index} className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 border border-gray-200/50 shadow-lg animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
                     <div className="flex items-center space-x-2">
-                      <div className="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 bg-clip-text text-transparent">
+                      <div className="text-2xl font-black bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                         {stat.value}
                       </div>
                       <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
@@ -148,7 +148,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                     {/* Mockup UI elements */}
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                           <Users className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
@@ -158,7 +158,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                       </div>
                       
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                           <BarChart3 className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
@@ -168,7 +168,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                       </div>
                       
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                           <Calendar className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
@@ -182,17 +182,17 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                   {/* Bottom section */}
                   <div className="flex items-center justify-between">
                     <div className="flex space-x-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg"></div>
-                      <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-lg"></div>
-                      <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-lg"></div>
+                      <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg shadow-sm"></div>
+                      <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
+                      <div className="w-8 h-8 bg-gray-200 rounded-lg"></div>
                     </div>
                     <div className="text-xs text-gray-400">Dashboard Preview</div>
                   </div>
                 </div>
                 
                 {/* Floating accent elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full shadow-lg animate-float"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full shadow-lg animate-float" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full shadow-lg animate-float opacity-80"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-400 rounded-full shadow-lg animate-float opacity-60" style={{ animationDelay: '1s' }}></div>
               </div>
             </div>
           </div>
@@ -215,9 +215,9 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-pink-200 transition-all duration-300 hover:shadow-xl group hover:-translate-y-1"
+                className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg group hover:-translate-y-1 shadow-sm"
               >
-                <div className="text-pink-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-pink-500 mb-6 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-300">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
@@ -244,7 +244,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
             <div className="relative aspect-video bg-gradient-to-br from-pink-50 via-purple-50 to-cyan-50 rounded-3xl border border-gray-200 overflow-hidden shadow-2xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 rounded-full flex items-center justify-center mb-4 mx-auto hover:scale-110 transition-transform duration-300 cursor-pointer shadow-2xl">
+                  <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mb-4 mx-auto hover:scale-110 transition-transform duration-300 cursor-pointer shadow-lg hover:shadow-pink-500/25">
                     <Play className="w-8 h-8 text-white ml-1" />
                   </div>
                   <p className="text-gray-700 text-lg font-semibold">Demo Video Coming Soon</p>
@@ -272,7 +272,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -282,7 +282,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
                 <p className="text-gray-700 mb-6 italic font-medium">"{testimonial.text}"</p>
                 <div>
                   <p className="text-gray-900 font-bold">{testimonial.name}</p>
-                  <p className="text-pink-500 text-sm font-medium">{testimonial.company}</p>
+                  <p className="text-cyan-400 text-sm font-medium">{testimonial.company}</p>
                 </div>
               </div>
             ))}
@@ -302,7 +302,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
             </p>
             <button 
               onClick={() => onNavigate?.('pricing')}
-              className="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
             >
               Start Your 7-Day Free Trial
             </button>
