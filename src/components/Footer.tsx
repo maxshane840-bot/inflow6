@@ -55,7 +55,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <p className="text-gray-600 text-sm">Email:</p>
               <a 
                 href="mailto:info@inflow.com" 
-                className="text-pink-500 hover:text-purple-600 transition-colors text-sm"
+                className="text-pink-500 hover:text-cyan-400 transition-colors text-sm"
               >
                 info@inflow.com
               </a>
@@ -70,7 +70,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <button
                   key={link.key}
                   onClick={() => handleNavigation(link.key)}
-                  className="block text-gray-600 hover:text-pink-500 transition-colors text-sm"
+                  className="block text-gray-600 hover:text-cyan-400 transition-colors text-sm"
                 >
                   {link.name}
                 </button>
@@ -86,7 +86,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <button
                   key={link.key}
                   onClick={() => handleNavigation(link.key)}
-                  className="block text-gray-600 hover:text-pink-500 transition-colors text-sm"
+                  className="block text-gray-600 hover:text-cyan-400 transition-colors text-sm"
                 >
                   {link.name}
                 </button>
@@ -99,7 +99,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-gray-900 font-semibold mb-4">Support</h3>
             <button
               onClick={handleContactSupport}
-              className="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-400 hover:from-pink-600 hover:via-purple-700 hover:to-cyan-500 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm hover:-translate-y-1 hover:shadow-lg"
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm hover:-translate-y-1 hover:shadow-lg shadow-sm"
             >
               Contact Support
             </button>
